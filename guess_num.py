@@ -14,5 +14,37 @@
 Тебе может понадобится модуль random, цикл while и ветвления
 """
 
-if __name__ == '__main__':
-    pass
+from random import randint 
+
+random_number = randint(0, 1000000)
+
+print('Добро пожаловать! Попробуйте отгадать загаданное системой число от 0 до 1_000_000')
+
+def validate_value():
+    value = input("Введите число: ")
+    try:
+        return int(value)
+    except:
+        if value == 'exit': return 'exit'
+        print('Вы ввели не число. Вы можете попробовать снова')
+        return None
+
+validated = validate_value()
+
+while validated != random_number:
+
+    if validated == 'exit':
+        print('Вы вышли из игры')
+        break
+    
+    else: 
+        if validated:
+            if validated > random_number:
+                print('Ваше число больше загаданного')
+            elif validated < random_number:
+                print('Ваше число меньше загаданного')
+
+    validated = validate_value()
+
+else: 
+    print('Вы отгадали число. Поздравляем!')
