@@ -8,5 +8,14 @@
 Тебе может понадобиться цикл for и ветвления
 """
 
-if __name__ == '__main__':
-    pass
+#if __name__ == '__main__': pass
+
+for number in range(0, 101):
+    
+    if number % 15 == 0: 
+        print('zip-zap')
+    elif number % 3 == 0: 
+        print('zip')
+    elif number % 5 == 0: 
+        print('zap')  
+    else: print(number)
